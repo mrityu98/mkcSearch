@@ -1,17 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Home from "./components/Home";
 import SearchResult from "./components/SearchResult";
 import { AppContext } from "./utils/ContextApi";
 
 function App() {
     return (
+        <AppContext>
         <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home/>}></Route>
-            <Route path="/" element={<SearchResult/>}></Route>
+            <Route path="/:query/:startIndex" element={<SearchResult/>}></Route>
         </Routes>
         </BrowserRouter>
+        </AppContext>
     )
 }
 
